@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Uss/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=3e1674866cb948d4eb54d7f24d3ec98e&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement name="menu_container" style="flex-grow: 1; align-items: center; justify-content: center;">
+        <ui:VisualElement name="menu_background" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; top: 0; left: 3px;" />
+        <ui:VisualElement name="menu_contents" style="width: 70%; height: 80%; flex-direction: row;">
+            <ui:VisualElement name="menu_left" style="width: 50%; align-items: center; justify-content: space-around; padding-top: 10%; padding-bottom: 10%;">
+                <ui:Label tabindex="-1" text="Sample Quiz" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_title" style="-unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Black SDF&apos;); font-size: 70px; color: rgb(255, 135, 4);" />
+                <ui:VisualElement name="menu_button-containers" style="align-items: center;">
+                    <ui:VisualElement name="menu_button-container--1" style="position: relative;">
+                        <ui:Button text="Play" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-play" class="menu-button" />
+                        <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-settings" class="menu-button" />
+                        <ui:Button text="More" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-more" class="menu-button" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="menu_button-container--2" style="position: absolute;">
+                        <ui:Button text="Test1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-test1" class="menu-button" />
+                        <ui:Button text="Test2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-test2" class="menu-button" />
+                        <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-back" class="menu-button" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Label tabindex="-1" text="Menu Description" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_description" style="-unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Light SDF&apos;); color: rgb(255, 255, 255); font-size: 30px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="menu_right" style="width: 50%; justify-content: center; align-items: center;">
+                <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_graphic" style="background-image: resource(&apos;Images/211751_gear_icon&apos;); width: 100%; height: 80%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

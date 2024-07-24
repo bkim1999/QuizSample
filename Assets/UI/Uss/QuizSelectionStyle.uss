@@ -1,0 +1,26 @@
+.select-button {
+    border-left-color: rgba(56, 56, 56, 0);
+    border-right-color: rgba(56, 56, 56, 0);
+    border-top-color: rgba(56, 56, 56, 0);
+    border-bottom-color: rgba(56, 56, 56, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    -unity-font-definition: resource('Fonts/Roboto/Roboto-Medium SDF');
+    font-size: 50px;
+    background-color: rgba(188, 188, 188, 0);
+    color: rgb(255, 255, 255);
+}
+
+.select-button:hover {
+    transition-duration: 0.5s;
+    scale: 1.5 1.5;
+    color: rgb(166, 255, 0);
+}
+
+.select-button:active {
+    scale: 1.3 1.3;
+    transition-duration: 0.2s;
+    color: rgb(20, 113, 10);
+}

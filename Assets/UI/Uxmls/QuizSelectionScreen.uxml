@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Uss/QuizSelectionStyle.uss?fileID=7433441132597879392&amp;guid=7db36b3cc7502414e8de30f4ca8667bd&amp;type=3#QuizSelectionStyle" />
+    <ui:VisualElement name="select_container" style="flex-grow: 1; align-items: center; justify-content: center;">
+        <ui:VisualElement name="select_background" style="position: absolute; width: 100%; bottom: auto; height: 100%; left: auto;" />
+        <ui:VisualElement name="select_contents" style="height: 60%; justify-content: space-around;">
+            <ui:Label tabindex="-1" text="Select Quiz" parse-escape-sequences="true" display-tooltip-when-elided="true" name="select_title" style="color: rgb(97, 255, 0); font-size: 70px; -unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Black SDF&apos;);" />
+            <ui:VisualElement name="select_button-container" style="justify-content: center;">
+                <ui:Button text="Quiz1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="select_button-quiz1" class="select-button select-buttonhover select-buttonactive" />
+                <ui:Button text="Quiz2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="select_button-quiz2" class="select-button select-buttonhover select-buttonactive" />
+                <ui:Button text="Quiz3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="select_button-quiz3" class="select-button select-buttonhover select-buttonactive" />
+                <ui:Button text="Quiz4" parse-escape-sequences="true" display-tooltip-when-elided="true" name="select_button-quiz4" class="select-button select-buttonhover select-buttonactive" />
+            </ui:VisualElement>
+            <ui:Label tabindex="-1" text="Quiz Selection Description" parse-escape-sequences="true" display-tooltip-when-elided="true" name="select_description" style="color: rgb(255, 255, 255); -unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Light SDF&apos;); font-size: 30px; -unity-font-style: normal;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
