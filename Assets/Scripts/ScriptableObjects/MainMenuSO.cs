@@ -5,10 +5,11 @@ using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
 
 [CreateAssetMenu(fileName = "MenuButton_Data", menuName = "Quiz/MenuButtonData", order = 1)]
-public abstract class MainMenuSO : ScriptableObject
+public class MainMenuSO : ScriptableObject
 {
     [SerializeField] string m_ElementID;
-    [TextArea(3, 10)] string m_Description;
+    [TextArea(3, 10)]
+    [SerializeField] string m_Description;
     Button m_MenuButton;
 
     public string ElementID => m_ElementID;

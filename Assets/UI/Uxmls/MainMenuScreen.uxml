@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/Uss/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=3e1674866cb948d4eb54d7f24d3ec98e&amp;type=3#MainMenuStyle" />
+    <Style src="project://database/Assets/UI/Uss/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=f2a7515674d3261439babab637c5cc32&amp;type=3#MainMenuStyle" />
     <ui:VisualElement name="menu_container" style="flex-grow: 1; align-items: center; justify-content: center;">
         <ui:VisualElement name="menu_background" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; top: 0; left: 3px;" />
         <ui:VisualElement name="menu_contents" style="width: 70%; height: 80%; flex-direction: row;">
@@ -11,7 +11,7 @@
                         <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-settings" class="menu-button" />
                         <ui:Button text="More" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-more" class="menu-button" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="menu_button-container--2" style="position: absolute;">
+                    <ui:VisualElement name="menu_button-container--2" style="position: relative;">
                         <ui:Button text="Test1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-test1" class="menu-button" />
                         <ui:Button text="Test2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-test2" class="menu-button" />
                         <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu_button-back" class="menu-button" />

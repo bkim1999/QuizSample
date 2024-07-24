@@ -11,7 +11,7 @@ public class MainMenuScreen : UIScreen
     Button m_BackButton;
     VisualElement m_ButtonContainer1;
     VisualElement m_ButtonContainer2;
-    Label m_Description;
+    Label m_MenuDescription;
     MainMenuSO[] m_MainMenuData;
 
     public MainMenuScreen(VisualElement rootElement) : base(rootElement)
@@ -29,7 +29,9 @@ public class MainMenuScreen : UIScreen
         m_BackButton = m_RootElement.Q<Button>("menu_button-back");
         m_ButtonContainer1 = m_RootElement.Q<VisualElement>("menu_button-container--1");
         m_ButtonContainer2 = m_RootElement.Q<VisualElement>("menu_button-container--2");
-        
+        m_MenuDescription = m_RootElement.Q<Label>("menu_description");
+        m_MenuDescription.text = string.Empty;
+
         m_MainMenuData = Resources.LoadAll<MainMenuSO>("MainMenuButtonData");
         for(int i = 0; i < m_MainMenuData.Length; i++)
         {
@@ -68,12 +70,12 @@ public class MainMenuScreen : UIScreen
 
     private void MenuMouseEnterHandler(Button menuButton)
     {
-        m_Description.text = (string)menuButton.userData;
+        m_MenuDescription.text = (string)menuButton.userData;
     }
 
     private void MenuMouseLeaveHandler()
     {
-        m_Description.text = string.Empty;
+        m_MenuDescription.text = string.Empty;
     }
 
 
