@@ -5,7 +5,9 @@ using UnityEngine;
 
 public static class UIEvents
 {
+    public static Action MainMenuShown;
     public static Action QuizSelectionShown;
-    public static Action QuizShown;
-    public static Action SettingsShown;    
+    public static Action QuizPlayShown;
+    public static Action SettingsShown;
+    public static Action BackButtonClicked;
 }

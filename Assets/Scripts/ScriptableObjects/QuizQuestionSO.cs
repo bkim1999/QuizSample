@@ -5,15 +5,16 @@ using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
 
 [CreateAssetMenu(fileName = "QuizQuestion_Data", menuName = "Quiz/QuizQuestionData", order = 1)]
-public class MainMenuSO : ScriptableObject
+public class QuizQuestionSO : ScriptableObject
 {
     [SerializeField] string m_Question;
     [TextArea(3, 10)]
-    [SerializeField] string[] m_Answers;
+    [SerializeField] string[] m_Choices;
+    [SerializeField] int m_AnswerIndex;
 
-    Button m_MenuButton;
+    Button[] m_ChoiceButtons;
 
-    public string Question => m_ElementID;
-    public string Description => m_Description;
-   // public Button MenuButton { get => m_MenuButton; set => m_MenuButton = value;}
+    public string Question => m_Question;
+    public string[] Choices => m_Choices;
+    public Button[] ChoiceButtons { get => m_ChoiceButtons; set => m_ChoiceButtons = value;}
 }

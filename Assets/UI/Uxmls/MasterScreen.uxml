@@ -1,6 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="MainMenuScreen" src="project://database/Assets/UI/Uxmls/MainMenuScreen.uxml?fileID=9197481963319205126&amp;guid=394c201a45a83cf47b067600dfe7ca69&amp;type=3#MainMenuScreen" />
-    <ui:Template name="QuizSelectionScreen" src="project://database/Assets/UI/Uxmls/QuizSelectionScreen.uxml?fileID=9197481963319205126&amp;guid=f86dcf4124a9f7745bc2676ba31c64ff&amp;type=3#QuizSelectionScreen" />
+    <ui:Template name="MainMenuScreen" src="project://database/Assets/UI/Uxmls/MainMenuScreen.uxml?fileID=9197481963319205126&amp;guid=b987227d1d123194a80c22b0186a5212&amp;type=3#MainMenuScreen" />
+    <ui:Template name="QuizSelectionScreen" src="project://database/Assets/UI/Uxmls/QuizSelectionScreen.uxml?fileID=9197481963319205126&amp;guid=711413578a5d65a4b824d0c4fce5b5ab&amp;type=3#QuizSelectionScreen" />
+    <ui:Template name="QuizPlayScreen" src="project://database/Assets/UI/Uxmls/QuizPlayScreen.uxml?fileID=9197481963319205126&amp;guid=e83e81e44a7b2e046b0599ec1dcc0307&amp;type=3#QuizPlayScreen" />
     <ui:Instance template="MainMenuScreen" name="MainMenuScreen" style="position: absolute; width: 100%; height: 100%;" />
     <ui:Instance template="QuizSelectionScreen" name="QuizSelectionScreen" style="width: 100%; height: 100%; position: absolute;" />
+    <ui:Instance template="QuizPlayScreen" name="QuizPlayScreen" style="position: absolute; width: 100%; height: 100%;" />
 </ui:UXML>

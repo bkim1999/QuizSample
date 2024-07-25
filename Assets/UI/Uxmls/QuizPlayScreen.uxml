@@ -1,4 +1,4 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Uss/QuizPlayStyle.uss?fileID=7433441132597879392&amp;guid=bf40db2dded4e2346a6684972ce58a41&amp;type=3#QuizPlayStyle" />
     <ui:VisualElement name="quiz_container" style="flex-grow: 1;">
         <ui:VisualElement name="quiz_background" style="position: absolute; width: 100%; height: 100%;" />
@@ -7,11 +7,11 @@
             <ui:ProgressBar value="22" name="quiz_progress-bar" class="unity-progress-bar__background" style="width: 50%; flex-grow: 0;" />
             <ui:VisualElement name="quiz_remaining-container" style="flex-direction: row; align-items: stretch;">
                 <ui:Label tabindex="-1" text="❤" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_icon-heart" style="-unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Medium SDF&apos;); color: rgb(255, 0, 0); font-size: 100px;" />
-                <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_remaining-guess-count" style="-unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Medium SDF&apos;); color: rgb(255, 255, 255); font-size: 100px;" />
+                <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_remaining-life-count" style="-unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Medium SDF&apos;); color: rgb(255, 255, 255); font-size: 100px;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="quiz_contents" style="height: 50%; justify-content: flex-start; align-items: center;">
-            <ui:Label tabindex="-1" text="1 of 3 Questions" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_number-question" style="font-size: 70px; -unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Black SDF&apos;); color: rgb(255, 255, 255); margin-bottom: 1%;" />
+            <ui:Label tabindex="-1" text="1 of 3 Questions" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_question-number" style="font-size: 70px; -unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Black SDF&apos;); color: rgb(255, 255, 255); margin-bottom: 1%;" />
             <ui:VisualElement name="quiz_question" style="justify-content: center; width: auto; height: 100%;">
                 <ui:ScrollView name="quiz_question-scrollview" style="justify-content: flex-end;">
                     <ui:Label tabindex="-1" text="What is the biggest animal in the world?" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_question-text" style="-unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Medium SDF&apos;); color: rgb(255, 255, 255); font-size: 50px;" />
