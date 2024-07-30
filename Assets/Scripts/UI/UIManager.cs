@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     UIScreen m_QuizSelectionScreen;
     UIScreen m_QuizPlayScreen;
     UIScreen m_QuizResultScreen;
+    UIScreen m_DialogueScreen;
     List<UIScreen> m_UIScreenList;
     Stack<UIScreen> m_UIScreenStack;
 
@@ -36,6 +37,7 @@ public class UIManager : MonoBehaviour
         m_QuizSelectionScreen = new QuizSelectionScreen(root.Q<VisualElement>("select_container"));
         m_QuizPlayScreen = new QuizPlayScreen(root.Q<VisualElement>("quiz_container"));
         m_QuizResultScreen = new QuizResultScreen(root.Q<VisualElement>("result_container"));
+        m_DialogueScreen = new DialogueScreen(root.Q<VisualElement>("dialogue_container"));
     }
 
     private void RegisterUIScreens()
@@ -44,7 +46,8 @@ public class UIManager : MonoBehaviour
             m_MainMenuScreen,
             m_QuizSelectionScreen,
             m_QuizPlayScreen,
-            m_QuizResultScreen
+            m_QuizResultScreen,
+            m_DialogueScreen
         };
     }
 
@@ -55,6 +58,7 @@ public class UIManager : MonoBehaviour
         UIEvents.QuizPlayShown += UIEvents_QuizPlayShown;
         UIEvents.BackButtonClicked += UIEvents_BackButtonClicked;
         UIEvents.QuizResultShown += UIEvents_QuizResultShown;
+        UIEvents.DialogueShown += UIEvents_DialogueShown;
     }
 
     private void HideAllScreens()
@@ -65,23 +69,23 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void SetCurrentScreen(UIScreen newCurrentScreen, bool saveHistory = true)
+    private void SetCurrentScreen(UIScreen newCurrentScreen, bool saveHistory = true, bool hideScreen = true)
     {
         if(m_CurrentScreen != null)
         {
-            if(saveHistory) { m_UIScreenStack.Push(m_CurrentScreen); }
-            m_CurrentScreen.Hide();
+            if (saveHistory) m_UIScreenStack.Push(m_CurrentScreen);
+            if (hideScreen) HideAllScreens();
             Debug.Log("UIManager: current screen hidden");
         }
         m_CurrentScreen = newCurrentScreen;
-        m_CurrentScreen.Show();
+        m_CurrentScreen.ShowWithTransition(0.2f, 0);
         Debug.Log("UIManager: CurrentScreen Set");
     }
 
     private void UIEvents_MainMenuShown()
     {
         m_UIScreenStack = new Stack<UIScreen>();
-        SetCurrentScreen(m_MainMenuScreen, false);
+        SetCurrentScreen(m_MainMenuScreen);
     }
 
     private void UIEvents_QuizSelectionShown()
@@ -102,5 +106,10 @@ public class UIManager : MonoBehaviour
     private void UIEvents_QuizResultShown()
     {
         SetCurrentScreen(m_QuizResultScreen);
+    }
+
+    private void UIEvents_DialogueShown()
+    {
+        SetCurrentScreen(m_DialogueScreen, hideScreen: false);
     }
 }

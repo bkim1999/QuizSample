@@ -9,17 +9,20 @@ public class QuizResultScreen : UIScreen
     const string k_ResultGraphic = "result_graphic";
     const string k_ReusltText = "result_text";
     const string k_ResultScore = "result_score";
+    const string k_ResultMainButton = "result_button-main";
 
     VisualElement m_RootElement;
     Label m_ResultTitle;
     Label m_ResultGraphic;
     Label m_ResultText;
     Label m_ResultScore;
+    Button m_ResultMainButton;
 
     public QuizResultScreen(VisualElement rootElement) : base(rootElement)
     {
         m_RootElement = rootElement;
-        SetVisualElements();
+        SetVisualElements(); 
+        RegisterCallbacks();
 
         QuizPlayEvents.QuizPassed += QuizPlayEvents_QuizPassed;
         QuizPlayEvents.QuizFailed += QuizPlayEvents_QuizFailed;
@@ -48,6 +51,12 @@ public class QuizResultScreen : UIScreen
         m_ResultGraphic = m_RootElement.Q<Label>(k_ResultGraphic);
         m_ResultText = m_RootElement.Q<Label>(k_ReusltText);
         m_ResultScore = m_RootElement.Q<Label>(k_ResultScore);
+        m_ResultMainButton = m_RootElement.Q<Button>(k_ResultMainButton);
+    }
+
+    private void RegisterCallbacks()
+    {
+        m_ResultMainButton.RegisterCallback<ClickEvent>(evt => UIEvents.MainMenuShown?.Invoke());
     }
 
     private void SetQuizScore(string score, bool passed)

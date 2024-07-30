@@ -84,7 +84,7 @@ public class QuizPlayScreen : UIScreen
 
     private void RegisterCallBacks()
     {
-        m_QuitButton.RegisterCallback<ClickEvent>(evt => UIEvents.MainMenuShown?.Invoke());
+        m_QuitButton.RegisterCallback<ClickEvent>(evt => UIEvents.DialogueShown?.Invoke());
         m_ContinueButton.RegisterCallback<ClickEvent>(evt => QuizPlayEvents.QuizContinued?.Invoke());
     }
 
@@ -99,9 +99,9 @@ public class QuizPlayScreen : UIScreen
             Button choiceButton = new Button() { text = choices[i] };
             choiceButton.AddToClassList("quiz-choice-button");
             choiceButton.userData = i;
-            choiceButton.RegisterCallback<ClickEvent>(evt => QuizPlayEvents.ChoiceSelected?.Invoke((int)(evt.target as Button).userData));
             m_ChoiceContainer.Add(choiceButton);
             m_ChoiceButtons.Add(choiceButton);
+            choiceButton.RegisterCallback<ClickEvent>(evt => QuizPlayEvents.ChoiceSelected?.Invoke((int)(evt.target as Button).userData));
         }
     }
 

@@ -2,9 +2,10 @@
     <Style src="project://database/Assets/UI/Uss/QuizResultStyle.uss?fileID=7433441132597879392&amp;guid=6c06aec6fed17a142b0703a2f53c4001&amp;type=3#QuizResultStyle" />
     <ui:VisualElement name="result_container" style="flex-grow: 1; align-items: center; justify-content: center;">
         <ui:VisualElement name="result_background" style="position: absolute; width: 100%; height: 100%;" />
-        <ui:VisualElement name="result_contents" style="width: 50%; height: 80%; justify-content: center; color: rgb(255, 255, 255); -unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Medium SDF&apos;); align-items: center;">
+        <ui:Button text="← Main menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="result_button-main" style="position: absolute; left: 1%; top: 1%; background-color: rgba(188, 188, 188, 0); color: rgb(255, 255, 255); -unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Medium SDF&apos;); font-size: 50px;" />
+        <ui:VisualElement name="result_contents" style="width: 50%; height: 100%; color: rgb(255, 255, 255); -unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Medium SDF&apos;); align-items: center; justify-content: center;">
             <ui:Label tabindex="-1" text="Quiz Title" parse-escape-sequences="true" display-tooltip-when-elided="true" name="result_title" style="font-size: 100px;" />
-            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="result_graphic" style="background-image: resource(&apos;Images/211751_gear_icon&apos;); -unity-background-scale-mode: scale-to-fit; width: 80%; height: 50%;" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="result_graphic" style="background-image: resource(&apos;Images/211751_gear_icon&apos;); -unity-background-scale-mode: scale-to-fit; width: 80%; height: 50%; margin-bottom: 5%; margin-top: 5%;" />
             <ui:Label tabindex="-1" text="Quiz Passed" parse-escape-sequences="true" display-tooltip-when-elided="true" name="result_text" style="-unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Black SDF&apos;); font-size: 70px;" />
             <ui:Label tabindex="-1" text="11/12" parse-escape-sequences="true" display-tooltip-when-elided="true" name="result_score" style="font-size: 60px;" />
         </ui:VisualElement>

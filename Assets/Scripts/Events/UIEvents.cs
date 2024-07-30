@@ -11,4 +11,5 @@ public static class UIEvents
     public static Action SettingsShown;
     public static Action BackButtonClicked;
     public static Action QuizResultShown;
+    public static Action DialogueShown;
 }

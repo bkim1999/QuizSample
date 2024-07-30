@@ -3,7 +3,7 @@
     <ui:VisualElement name="select_container" style="flex-grow: 1; align-items: center; justify-content: center; flex-direction: row;">
         <ui:VisualElement name="select_background" style="position: absolute; width: 100%; bottom: auto; height: 100%; left: auto;" />
         <ui:VisualElement name="select_left" style="flex-grow: 1; height: 100%; width: 50%; justify-content: center; align-items: center;">
-            <ui:VisualElement name="select_contents" style="height: 60%; justify-content: space-around;">
+            <ui:VisualElement name="select_contents" style="height: 60%; justify-content: space-around; align-items: center;">
                 <ui:Label tabindex="-1" text="Select Quiz" parse-escape-sequences="true" display-tooltip-when-elided="true" name="select_title" style="color: rgb(97, 255, 0); font-size: 70px; -unity-font-definition: resource(&apos;Fonts/Roboto/Roboto-Black SDF&apos;);" />
                 <ui:VisualElement name="select_button-container" style="justify-content: center;">
                     <ui:Button text="Quiz1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="select_button-quiz1" class="select-button select-buttonhover select-buttonactive" />

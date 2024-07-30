@@ -73,8 +73,7 @@
 }
 
 .quiz-choice-button:disabled {
-    opacity: 0.5;
-    pointer-events: none;
+    opacity: 0.8;
 }
 
 .quiz-continue-button {
@@ -96,7 +95,7 @@
 }
 
 .quiz-continue-button:disabled {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .quiz-continue-button:hover {

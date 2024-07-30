@@ -3,9 +3,11 @@
     <ui:Template name="QuizSelectionScreen" src="project://database/Assets/UI/Uxmls/QuizSelectionScreen.uxml?fileID=9197481963319205126&amp;guid=711413578a5d65a4b824d0c4fce5b5ab&amp;type=3#QuizSelectionScreen" />
     <ui:Template name="QuizPlayScreen" src="project://database/Assets/UI/Uxmls/QuizPlayScreen.uxml?fileID=9197481963319205126&amp;guid=e83e81e44a7b2e046b0599ec1dcc0307&amp;type=3#QuizPlayScreen" />
     <ui:Template name="QuizResultScreen" src="project://database/Assets/UI/Uxmls/QuizResultScreen.uxml?fileID=9197481963319205126&amp;guid=4138a0ed915b4834787947c95b100ee9&amp;type=3#QuizResultScreen" />
+    <ui:Template name="DialogueScreen" src="project://database/Assets/UI/Uxmls/DialogueScreen.uxml?fileID=9197481963319205126&amp;guid=d00eff1a4f175f542858b0cda1fc59fd&amp;type=3#QuitDialogueScreen" />
     <ui:VisualElement name="background" style="background-color: rgb(0, 0, 0); position: absolute; width: 100%; height: 100%;" />
     <ui:Instance template="MainMenuScreen" name="MainMenuScreen" style="position: absolute; width: 100%; height: 100%;" />
     <ui:Instance template="QuizSelectionScreen" name="QuizSelectionScreen" style="width: 100%; height: 100%; position: absolute;" />
     <ui:Instance template="QuizPlayScreen" name="QuizPlayScreen" style="position: absolute; width: 100%; height: 100%;" />
     <ui:Instance template="QuizResultScreen" name="QuizResultScreen" style="width: 100%; height: 100%; position: absolute;" />
+    <ui:Instance template="DialogueScreen" name="QuitDialogueScreen" style="position: absolute; width: 100%; height: 100%;" />
 </ui:UXML>

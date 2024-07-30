@@ -16,6 +16,12 @@ public abstract class UIScreen
     {
         m_RootElement.parent.style.display = DisplayStyle.Flex;
     }
+
+    public void ShowWithTransition(float duration = 0f, float delay = 0f)
+    {
+        m_RootElement.parent.style.transitionDuration = new List<TimeValue> { duration, new(delay, TimeUnit.Millisecond) };
+        Show();
+    }
     public void Hide()
     {
         m_RootElement.parent.style.display = DisplayStyle.None;

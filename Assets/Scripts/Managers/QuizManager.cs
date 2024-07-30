@@ -74,12 +74,17 @@ public class QuizManager : MonoBehaviour
         else
         {
             QuizPlayEvents.IncorrectlyAnswered?.Invoke(choiceIndex, m_CurrentQuizQuestion.AnswerIndex);
-            QuizPlayEvents.LifeCountUpdated?.Invoke(--m_RemainingLifeCount);
-            if (m_RemainingLifeCount < 0)
+            m_RemainingLifeCount--;
+            if (m_RemainingLifeCount <= 0)
             {
+                Debug.Log("QuizManager: Life is zero or less than zero");
                 QuizPlayEvents.QuizEnded?.Invoke(m_QuizData);
                 QuizPlayEvents.QuizFailed?.Invoke($"{m_CorrectAnswerCount} / {m_TotalQuestionCount}");
-                return;
+                UIEvents.QuizResultShown?.Invoke();
+            }
+            else
+            {
+                QuizPlayEvents.LifeCountUpdated?.Invoke(m_RemainingLifeCount);
             }
         }
     }
