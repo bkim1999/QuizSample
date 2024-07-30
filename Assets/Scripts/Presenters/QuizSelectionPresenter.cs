@@ -19,15 +19,28 @@ public class QuizSelectionPresenter : MonoBehaviour
     private void InsertQuizButtons()
     {
         m_QuizData = Resources.LoadAll<QuizSO>("QuizData");
+        if (m_QuizData == null)
+        {
+            Debug.LogError("QuizSelectionPresenter: QuizData is null.");
+            return;
+        }
         QuizSelectionEvents.QuizButtonsInserted?.Invoke(m_QuizData);
     }
 
     private void RegisterCallBacks()
     {
-        foreach (QuizSO quiz in m_QuizData)
+        List<Button> quizButtons = m_QuizSelectionScreen.QuizButtons;
+
+        if (quizButtons == null || quizButtons.Count == 0)
         {
-            quiz.QuizButton.RegisterCallback<ClickEvent>(evt => QuizSelectionEvents.QuizSelected.Invoke(quiz));
-            quiz.QuizButton.RegisterCallback<MouseEnterEvent>(evt => MouseEnterQuizHandler(evt.target as Button));
+            Debug.LogError("QuizSelectionPresenter: QuizData is null or length is zero.");
+            return;
+        }
+
+        foreach (Button quizButton in quizButtons)
+        {
+            quizButton.RegisterCallback<ClickEvent>(evt => QuizSelectionEvents.QuizSelected.Invoke(m_QuizData[(int) quizButton.userData]));
+            quizButton.RegisterCallback<MouseEnterEvent>(evt => MouseEnterQuizHandler(evt.target as Button));
         }
         m_QuizSelectionScreen.BackButton.RegisterCallback<ClickEvent>(evt => UIEvents.BackButtonClicked?.Invoke());
     }

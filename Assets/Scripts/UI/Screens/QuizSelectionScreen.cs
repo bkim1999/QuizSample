@@ -15,17 +15,21 @@ public class QuizSelectionScreen : UIScreen
     Label m_SelectDescription;
     Label m_SelectGraphic;
     Button m_BackButton;
+    List<Button> m_QuizButtons;
 
     public Button BackButton => m_BackButton;
+    public List<Button> QuizButtons => m_QuizButtons;
 
     public QuizSelectionScreen(VisualElement rootElement) : base(rootElement)
-    {
+    { 
+        SetVisualElements();
+        CleanView();
+
         QuizSelectionEvents.QuizButtonsInserted += QuizSelectionEvents_QuizButtonsInserted;
         QuizSelectionEvents.QuizDataLoaded += QuizSelectionEvents_QuizDataLoaded;
         QuizSelectionEvents.QuizSelected += QuizSelectionEvents_QuizSelected;
 
-        SetVisualElements();
-        CleanView();
+        QuizSelectionEvents.Initialized?.Invoke(this);
     }
 
     // event handlers
@@ -46,6 +50,7 @@ public class QuizSelectionScreen : UIScreen
     }
 
     // methods
+
     private void SetVisualElements()
     {
         m_SelectButtonContainer = m_RootElement.Q<VisualElement>(k_SelectButtonContainer);
@@ -63,13 +68,16 @@ public class QuizSelectionScreen : UIScreen
 
     private void InsertQuizButton(QuizSO[] quizArray)
     {
-        for(int i = 0; i < quizArray.Length; i++)
+        m_QuizButtons = new List<Button>();
+        for (int i = 0; i < quizArray.Length; i++)
         {
             Button quizButton = new Button() { text = quizArray[i].Title };
             quizButton.userData = i;
             quizButton.AddToClassList("select-button");
             m_SelectButtonContainer.Add(quizButton);
+            m_QuizButtons.Add(quizButton);
         }
+
     }
 
     private void LoadQuizData(string description, Sprite graphic)

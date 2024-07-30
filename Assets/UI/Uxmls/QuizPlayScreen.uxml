@@ -18,11 +18,14 @@
                 </ui:ScrollView>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="quiz_answer" style="flex-direction: row; width: 100%; justify-content: space-around; align-items: center; height: 35%;">
-            <ui:Button text="Elephant" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_answer__1" class="quiz-answer-button" />
-            <ui:Button text="Elephant" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_answer__2" class="quiz-answer-button" />
-            <ui:Button text="Elephant" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_answer__3" class="quiz-answer-button" />
-            <ui:Button text="Elephant" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_answer__4" class="quiz-answer-button" />
+        <ui:VisualElement name="quiz_choice-container" style="flex-direction: row; width: 100%; justify-content: space-around; align-items: center; height: 25%;">
+            <ui:Button text="Elephant" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_answer__1" class="quiz-choice-button" />
+            <ui:Button text="Elephant" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_answer__2" class="quiz-choice-button" />
+            <ui:Button text="Elephant" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_answer__3" class="quiz-choice-button" />
+            <ui:Button text="Elephant" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_answer__4" class="quiz-choice-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="quiz_footer" style="width: 100%; height: 10%; align-items: flex-end; justify-content: space-around;">
+            <ui:Button text="Continue &gt;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quiz_button-continue" class="quiz-continue-button" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

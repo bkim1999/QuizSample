@@ -12,9 +12,7 @@ public class QuizQuestionSO : ScriptableObject
     [SerializeField] string[] m_Choices;
     [SerializeField] int m_AnswerIndex;
 
-    Button[] m_ChoiceButtons;
-
     public string Question => m_Question;
     public string[] Choices => m_Choices;
-    public Button[] ChoiceButtons { get => m_ChoiceButtons; set => m_ChoiceButtons = value;}
+    public int AnswerIndex => m_AnswerIndex;
 }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31668ac7d554e5a43a4a4d337376d6d2, type: 3}
-  m_Name: Quiz1Question_Data
+  m_Name: AnimalQiuz1
   m_EditorClassIdentifier: 
-  m_Question: 
+  m_Question: Which species are you?
   m_Choices:
-  - 
-  - 
-  - 
-  - 
+  - Human
+  - Elephant
+  - Kangaroo
+  - Alien
   m_AnswerIndex: 0

@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     // UIScreen m_SettingsScreen;
     UIScreen m_QuizSelectionScreen;
     UIScreen m_QuizPlayScreen;
+    UIScreen m_QuizResultScreen;
     List<UIScreen> m_UIScreenList;
     Stack<UIScreen> m_UIScreenStack;
 
@@ -34,6 +35,7 @@ public class UIManager : MonoBehaviour
         m_MainMenuScreen = new MainMenuScreen(root.Q<VisualElement>("menu_container"));
         m_QuizSelectionScreen = new QuizSelectionScreen(root.Q<VisualElement>("select_container"));
         m_QuizPlayScreen = new QuizPlayScreen(root.Q<VisualElement>("quiz_container"));
+        m_QuizResultScreen = new QuizResultScreen(root.Q<VisualElement>("result_container"));
     }
 
     private void RegisterUIScreens()
@@ -41,7 +43,8 @@ public class UIManager : MonoBehaviour
         m_UIScreenList = new List<UIScreen>{
             m_MainMenuScreen,
             m_QuizSelectionScreen,
-            m_QuizPlayScreen
+            m_QuizPlayScreen,
+            m_QuizResultScreen
         };
     }
 
@@ -51,6 +54,7 @@ public class UIManager : MonoBehaviour
         UIEvents.QuizSelectionShown += UIEvents_QuizSelectionShown;
         UIEvents.QuizPlayShown += UIEvents_QuizPlayShown;
         UIEvents.BackButtonClicked += UIEvents_BackButtonClicked;
+        UIEvents.QuizResultShown += UIEvents_QuizResultShown;
     }
 
     private void HideAllScreens()
@@ -67,6 +71,7 @@ public class UIManager : MonoBehaviour
         {
             if(saveHistory) { m_UIScreenStack.Push(m_CurrentScreen); }
             m_CurrentScreen.Hide();
+            Debug.Log("UIManager: current screen hidden");
         }
         m_CurrentScreen = newCurrentScreen;
         m_CurrentScreen.Show();
@@ -75,7 +80,8 @@ public class UIManager : MonoBehaviour
 
     private void UIEvents_MainMenuShown()
     {
-        SetCurrentScreen(m_CurrentScreen, false);
+        m_UIScreenStack = new Stack<UIScreen>();
+        SetCurrentScreen(m_MainMenuScreen, false);
     }
 
     private void UIEvents_QuizSelectionShown()
@@ -91,5 +97,10 @@ public class UIManager : MonoBehaviour
     private void UIEvents_BackButtonClicked()
     {
         SetCurrentScreen(m_UIScreenStack.Pop());
+    }
+
+    private void UIEvents_QuizResultShown()
+    {
+        SetCurrentScreen(m_QuizResultScreen);
     }
 }
